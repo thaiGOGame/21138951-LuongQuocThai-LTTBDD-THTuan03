@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: linear-gradient(to right, red, blue, yellow);
 }
 
@@ -12,19 +11,22 @@
   padding: 20px;
   border-radius: 10px;
   color: white;
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  margin: 10px 10px;
+  max-width: 600px; /* Adjusted for smaller screens */
 }
 
 .equation-inputs {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  gap: 10px; /* Add space between input groups */
   margin-bottom: 20px;
 }
 
 .equation-inputs div {
   display: flex;
   flex-direction: column;
+  gap: 10px; /* Add space between inputs */
 }
 
 input {
@@ -32,6 +34,7 @@ input {
   padding: 10px;
   border-radius: 5px;
   border: none;
+  font-size: 16px; /* Adjusted font size for better mobile display */
 }
 
 button {
@@ -41,6 +44,7 @@ button {
   background-color: #61dafb;
   color: black;
   cursor: pointer;
+  font-size: 16px; /* Adjusted font size for better mobile display */
 }
 
 button:hover {
@@ -49,6 +53,26 @@ button:hover {
 
 .results {
   margin-top: 20px;
+  text-align: left; /* Align results text to the left */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .equation-inputs {
+      flex-direction: column;
+  }
+
+  .equation-inputs div {
+      align-items: center;
+  }
+
+  input {
+      width: 80%; /* Make inputs responsive */
+  }
+
+  button {
+      width: 80%; /* Make button responsive */
+  }
 }
